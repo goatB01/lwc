@@ -1,0 +1,57 @@
+.card-item {
+    border: 1px solid #000000;
+    border-radius: 0.25rem;
+    background-clip: padding-box;
+    background: #a1a1a1;
+    padding: 0.45rem;
+    margin: 0.25rem;
+    position: relative; /* Ensure relative positioning for absolute positioning within */
+    z-index: 1;
+    /*margin-bottom: 2rem;*/
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.button-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1; /* Ensure button container is above other content */
+}
+.custom-dropdown {
+    position: absolute;
+    top: 100%; /* Position dropdown below button */
+    left: 0;
+    z-index: 9999;
+    background-color: #ffffff;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none; /* Hide dropdown by default */
+}
+.dropdown-trigger:hover .custom-dropdown {
+    display: block; /* Show dropdown on hover */
+}
+.custom-dropdown-left {
+    position: absolute;
+    top: 2rem; /* Adjust this value as needed */
+    left: 0; /* Adjust the positioning to align the dropdown */
+    z-index: 9999; /* Increase the z-index to ensure it appears above other elements */
+    background-color: #ffffff;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.custom-dropdown-list {
+    list-style-type: none;
+    padding: 0.5rem 0;
+}
+.custom-dropdown-item {
+    padding: 0.5rem 1rem;
+}
+.custom-dropdown-item:hover {
+    background-color: #f4f6f9;
+}

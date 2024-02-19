@@ -1,0 +1,55 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+    <template if:true={isSameStage}>
+        <li class="card-item slds-var-m-around_small" draggable="true" ondragstart={itemDragStart} onclick={handleCardClick}>
+            <article class="slds-tile slds-tile_board">
+                <div class="card-header">
+                    <h3 class="slds-truncate" title={record.Name}>
+                        <a href="#" data-id={record.Id} onclick={navigateOppHandler}>
+                            <span class="slds-truncate" data-id={record.Id}>{record.Name}</span>
+                        </a>
+                    </h3>
+                </div>
+                <div class="button-container">
+                    <div class="dropdown-trigger">
+                        <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" aria-expanded={isDropdownOpen} title="Show More" onclick={toggleDropdown}>
+                            <lightning-icon icon-name="utility:down" size="x-small"></lightning-icon>
+                            <span class="slds-assistive-text">Show More</span>
+                        </button>
+                    </div>
+                    <template if:true={isDropdownOpen}>
+                        <div class="slds-dropdown custom-dropdown-left">
+                            <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+                                <li class="slds-dropdown__item" role="presentation">
+                                    <a href="#" role="menuitem" tabindex="0" onclick={handleEdit}>
+                                        <span class="slds-truncate" title="Edit">Edit</span>
+                                    </a>
+                                </li>
+                                <li class="slds-dropdown__item" role="presentation">
+                                    <a href="#" role="menuitem" tabindex="-1" onclick={handleDelete}>
+                                        <span class="slds-truncate" title="Delete">Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </template>
+                </div>
+                <div class="slds-tile__detail slds-text-body_small">
+                    <p class="slds-text-heading_small">Amount: ${record.Amount}</p>
+                    <p class="slds-truncate" title={record.AccountName}>
+                        <a href="#" data-id={record.AccountId} onclick={navigateAccHandler}>
+                            <span class="slds-truncate" data-id={record.AccountId}>{record.AccountName}</span>
+                        </a>
+                    </p>
+                    <p class="slds-truncate" title={record.CloseDate}>Closing {record.CloseDate}</p>
+                    <template if:true={isExpanded}>
+                        <div class="expanded-zone">
+                            <c-tasks-list opportunity-id={record.Id}></c-tasks-list>
+                        </div>
+                    </template>
+                </div>
+            </article>
+        </li>
+    </template>
+</template>

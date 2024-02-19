@@ -1,0 +1,18 @@
+<template>
+    <template if:true={tasks.length}>
+        <p><b>Tasks :</b></p>
+        <ul>
+            <template for:each={tasks} for:item="task">
+                <li key={task.Id}>
+                    <div class="slds-m-around_small">
+                        <a href="#" onclick={handleTaskClick} data-record-id={task.Id}>{task.Subject}</a>
+                    </div>
+                </li>
+            </template>
+        </ul>
+    </template>
+    <template if:false={tasks.length}>
+        <p><b>Tasks :</b></p>
+        <p>No tasks found</p>
+    </template>
+</template>

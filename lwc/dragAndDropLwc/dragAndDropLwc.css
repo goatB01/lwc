@@ -1,0 +1,51 @@
+.card_wrapper {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+}
+
+.column_heading {
+    position: relative;
+    padding: 0.5rem 0.25rem;
+    font-size: 15px;
+    background: #005fb2;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+/*
+.column_heading::after {
+    content: '';
+    position: absolute;
+    top: 50%; 
+    right: -15px; 
+    transform: translateY(-50%); 
+    width: 15px; 
+    height: 100%; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #005fb2;
+    
+}
+.column_heading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 15px;
+    height: 100%;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #ffffff;
+    transform: translateY(-50%);
+}*/
+.stageContainer{
+    float:right;
+    border: 2px solid #000000;
+    margin: 0.05rem;
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+    padding-right: 0px; /* Adjust the padding to make space for the arrow */
+    padding-left: 0px;
+}
